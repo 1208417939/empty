@@ -4,14 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <script>
 
- 
+    <script>
+    var str = '{ "name": "Judy","nickname": "采苓", "age": 20, "isFemale": true, "hobby": ["sketch", "reading", "sleeping"] } }'
+    var obj = eval ("(" + str + ")");
+    document.getElementById("name").innerHTML = obj.name
+        if (obj.isFemale) {
+            document.getElementById("gender").innerHTML = 'female'
+        }
+        else {
+            document.getElementById("gender").innerHTML = 'male'
+        }
+    document.getElementById("nickname").innerHTML = obj.nickname
+    document.getElementById("age").innerHTML = obj.age
+    document.getElementById("hobby").innerHTML = obj.hobby
     </script>
 </head>
 <body>
+    @RenderBody()
+    Name: <span id="name"></span> <br />
+    Nickname: <span id="nickname"></span> <br />
+    Age:<span id="age"></span> <br />
+    Gender:<span id="gender"></span> <br />
+    Hobby:<span id="hobby"></span> <br />
+    Course:<span id="course"></span> <br />
 
-        @RenderBody()
- 
+
 </body>
 </html>

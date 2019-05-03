@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <script>
+    var str = { "name": "Judy","nickname": "采苓", "age": 20, "isFemale": true, "hobby": ["sketch", "reading", "sleeping"], "course": { "algorithm": 86, "C++": 95, "SQL": 92, "ASP.NET": null } }
+    var obj = eval ("(" + txt + ")");
+    document.getElementById("name").innerHTML = obj.name
+    if document.getElementById("name").innerHTML = obj.name
+    document.getElementById("nickname").innerHTML = obj.nickName
+    document.getElementById("age").innerHTML = obj.age
+    document.getElementById("hobby").innerHTML = obj.hobby
+    document.getElementById("course").innerHTML=obj.hobby
+    </script>
+</head>
+<body>
+    First Name: <span id="fname"></span> <br />
+    Last Name: <span id="lname"></span> <br />
+    
+
+    @RenderBody()
+    <p>请输入你开始学习的时间：</p>
+    <p>年：</p><input type="text" id="year"></p><p>月：</p><input type="month" id="year"><p>日：</p><input type="date" id="year">
+    <p>请输入你想学习的天数
+    <p>当你离开周数输入框时，被触发的函数会自动计算出截至日期和总学费。</p>
+
+</body>
+</html>
