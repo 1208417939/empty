@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <p>请输入你开始学习的时间：</p>
+    <p>年：</p>
+    <input type="text" id="year"></p>
+    <p>月：</p>
+    <input type="text" id="month">
+    <p>日：</p>
+    <input type="text" id="date">
+    <p>请输入你想学习的天数:</p>
+    <input type="text" id="dayinput"><br />
+    <p>当你提交，自动计算出截至日期和总学费。</p>
+
+    <button id="myBtn">提交</button>
+
+    <script>
+        document.getElementById("myBtn").onclick = function () { count() };
+        function count() {
+            var year = document.getElementById("year").value;
+            year = parseInt(year);
+            var month = document.getElementById("month").value;
+            month = parseInt(month) - 1;
+            var date = document.getElementById("date").value;
+            date = parseInt(date);
+            var day = document.getElementById("dayinput").value;
+            day = parseInt(day);
+            var date1 = new Date(year, month, date);
+            var n = day * (1000 * 60 * 60 * 24) + date1.getTime();
+            var date2 = new Date();
+            date2.setTime(n);
+            var endyear = date2.getFullYear();
+            var endmonth = date2.getMonth() + 1;
+            var enddate = date2.getDate();
+            alert('结束时间为' + endyear + '年,' + endmonth + '月,' + enddate + '日')
+
+
+        }
+    </script>
+
+</body>
+</html>
