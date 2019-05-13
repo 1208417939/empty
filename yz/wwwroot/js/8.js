@@ -1,6 +1,7 @@
 ﻿/*完成详细的、可测试的需求文档：学费计算器（Web版）。实现以下功能：
 用户可以选择在源栈学习的开始时间、共学习多少天/周/月
 然后，系统自动计算出截至日期和总学费*/
+//见草稿CSHTML
 
 
 /*JSON生成和解析：
@@ -22,7 +23,7 @@ function isFloat(str) {
 }
 
 function deletezyf(str) {
-    var reg = /^<.*?\s(zyf\-).+[\".?\"]?.*?>$/g
+    var reg = /^<.*?\szyf\-.+[\".?\"]?.*?>$/g
     if (reg.test(str)) {
         str = str.replace(reg, function (match, content) {
             return match.replace(content, '');

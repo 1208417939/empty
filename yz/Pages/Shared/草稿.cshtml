@@ -1,31 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-
-    <script>
-    var str = { "name": "Judy","nickname": "采苓", "age": 20, "isFemale": true, "hobby": ["sketch", "reading", "sleeping"], "course": { "algorithm": 86, "C++": 95, "SQL": 92, "ASP.NET": null } }
-    var obj = eval ("(" + txt + ")");
-    document.getElementById("name").innerHTML = obj.name
-    if document.getElementById("name").innerHTML = obj.name
-    document.getElementById("nickname").innerHTML = obj.nickName
-    document.getElementById("age").innerHTML = obj.age
-    document.getElementById("hobby").innerHTML = obj.hobby
-    document.getElementById("course").innerHTML=obj.hobby
-    </script>
 </head>
 <body>
-    First Name: <span id="fname"></span> <br />
-    Last Name: <span id="lname"></span> <br />
-    
 
-    @RenderBody()
     <p>请输入你开始学习的时间：</p>
-    <p>年：</p><input type="text" id="year"></p><p>月：</p><input type="month" id="year"><p>日：</p><input type="date" id="year">
-    <p>请输入你想学习的天数
-    <p>当你离开周数输入框时，被触发的函数会自动计算出截至日期和总学费。</p>
+    <p>年：</p>
+    <input type="text" id="year"></p>
+    <p>月：</p>
+    <input type="text" id="month">
+    <p>日：</p>
+    <input type="text" id="date">
+    <p>请输入你想学习的天数:</p>
+    <input type="text" id="dayinput"><br />
+    <p>当你提交，自动计算出截至日期和总学费。</p>
+
+    <button id="myBtn">提交</button>
+
+    <script>
+        document.getElementById("myBtn").onclick = function () { count() };
+        function count() {
+            var year = document.getElementById("year").value;
+            year = parseInt(year);
+            var month = document.getElementById("month").value;
+            month = parseInt(month) - 1;
+            var date = document.getElementById("date").value;
+            date = parseInt(date);
+            var day = document.getElementById("dayinput").value;
+            day = parseInt(day);
+            var date1 = new Date(year, month, date);
+            var n = day * (1000 * 60 * 60 * 24) + date1.getTime();
+            var date2 = new Date();
+            date2.setTime(n);
+            var endyear = date2.getFullYear();
+            var endmonth = date2.getMonth() + 1;
+            var enddate = date2.getDate();
+            alert('结束时间为' + endyear + '年,' + endmonth + '月,' + enddate + '日')
+
+
+        }
+    </script>
 
 </body>
 </html>
