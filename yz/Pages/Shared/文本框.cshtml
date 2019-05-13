@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <script>
+document.getElementById("bt").onclick = function () {
+      document.getElementById("text").disabled = "disabled";
+    };
+    </script>
+</head>
+<body>
+    <form>
+        请选择：
+        <select>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+    </form>
+    <input type="button" value="禁用文本框" id="bt" />
+    <input type="text" value="请输入~" id="text" />
+
+</body>
+</html>
